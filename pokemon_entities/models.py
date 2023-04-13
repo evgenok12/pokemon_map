@@ -1,4 +1,4 @@
-from django.db import models  # noqa F401
+from django.db import models
 
 
 class Pokemon(models.Model):
@@ -6,7 +6,7 @@ class Pokemon(models.Model):
     image = models.ImageField(upload_to='images/pokemon', blank=True)
 
     def __str__(self):
-        return f'{self.title}'
+        return self.title
 
 
 class PokemonEntity(models.Model):
@@ -15,3 +15,8 @@ class PokemonEntity(models.Model):
     lon = models.FloatField()
     appeared_at = models.DateTimeField()
     disappeared_at = models.DateTimeField()
+    level = models.IntegerField()
+    health = models.IntegerField()
+    strength = models.IntegerField()
+    defence = models.IntegerField()
+    stamina = models.IntegerField()
